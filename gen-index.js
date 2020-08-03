@@ -49,7 +49,7 @@ function createIndex(sectionList) {
     index.style.border = '1px solid black';
     index.style.position = 'absolute';
     index.style.top = 0;
-    index.style.left = 0;
+    index.style.right = 0;
     index.style.background = 'white';
     index.style.zIndex = 1;
     body.appendChild(index);
