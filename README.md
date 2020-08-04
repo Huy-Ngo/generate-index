@@ -11,4 +11,4 @@ Seeing such struggle, I've decided to write this script to help you navigate
 more easily.
 
 Disclaimer: This only works with pages whose sections are `<h1>`, `<h2>`, `<h3>`,
-and each of those must have ids.
+`<a>`, `<div>`, `<span>`, and each of those must have ids.
