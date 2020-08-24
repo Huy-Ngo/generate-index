@@ -13,7 +13,7 @@ function getTitle(elId) {
         word = word.join('');
         return word;
     });
-   return elId.join(' ');
+    return elId.join(' ');
 }
 
 /* Get heading level, link to heading, and the title for each heading */
@@ -55,7 +55,7 @@ function createIndex(sectionList) {
     index.appendChild(indexTitle);
     for (let section of sectionList) {
         let div = document.createElement('div');
-        let a_link =  document.createElement('a');
+        let a_link = document.createElement('a');
         let text = document.createTextNode(section.title);
         a_link.href = section['link'];
         a_link.appendChild(text);
@@ -75,7 +75,9 @@ function createIndex(sectionList) {
     body.appendChild(index);
 }
 
-if (!check()) {
-    const sectionList = getSectionList();
-    createIndex(sectionList);
-}
+const sectionList = getSectionList();
+
+
+chrome.runtime.sendMessage({ sections: sectionList }, function (response) {
+    console.log(response.farewell);
+});
