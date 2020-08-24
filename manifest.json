@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "Auto index",
+    "version": "0.0.1",
+  
+    "description": "A plain text description",
+  
+    "browser_action": {
+        "default_title": "Google Index",
+        "default_popup": "popup.html"
+      },
+  
+    "author": "Ngô Ngọc Đức Huy",
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "permissions": ["activeTab"],
+    "version_name": "0.0.1"
+  }
