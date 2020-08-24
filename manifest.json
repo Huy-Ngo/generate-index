@@ -9,6 +9,12 @@
         "default_title": "Google Index",
         "default_popup": "popup.html"
       },
+    "content_scripts": [
+      { 
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["gen-index.js"]
+      }
+    ],
   
     "author": "Ngô Ngọc Đức Huy",
     "background": {
