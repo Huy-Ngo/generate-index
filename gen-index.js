@@ -4,38 +4,31 @@ function check() {
     return els.length > 0;
 }
 
-/* Convert id to title case */
-function getTitle(elId) {
-    elId = elId.split('-');
-    elId = elId.map(word => {
-        word = word.split('');
-        word[0] = word[0].toUpperCase();
-        word = word.join('');
-        return word;
-    });
-   return elId.join(' ');
+/* Convert title to heading ID */
+function toID(text) {
+    return text.toLowerCase().replace(/[^a-z]/, '-');
 }
 
 /* Get heading level, link to heading, and the title for each heading */
 function getSectionList() {
-    let nodes = document.querySelectorAll('h1, h2, h3, a, span, div');
+    let nodes = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
     const sectionList = [];
     nodes = Array.from(nodes)
     const levelMap = {
         'h1': 0,
         'h2': 1,
         'h3': 2,
-        'a': 3,
-        'span': 3,
-        'div': 3
+        'h4': 3,
+        'h5': 4,
+        'h6': 5,
     }
     for (let node of nodes) {
         if (node.id == '') {
-            continue;
+            node.id = toID(node.innerText);
         }
         let level = levelMap[node.tagName.toLowerCase()];
         let link = '#' + node.id;
-        let title = getTitle(node.id);
+        let title = node.innerText;
         sectionList.push({
             'level': level,
             'link': link,
@@ -67,7 +60,7 @@ function createIndex(sectionList) {
     }
     index.id = 'custom-index';
     index.style.border = '1px solid black';
-    index.style.position = 'absolute';
+    index.style.position = 'fixed';
     index.style.top = 0;
     index.style.right = 0;
     index.style.background = 'white';
