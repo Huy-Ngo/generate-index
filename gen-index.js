@@ -41,8 +41,8 @@ function getSectionList() {
 /* Create the index */
 function createIndex(sectionList) {
     const body = document.querySelector('body');
-    const index = document.createElement('div');
-    const indexTitle = document.createElement('div');
+    const index = document.createElement('details');
+    const indexTitle = document.createElement('summary');
     let text = document.createTextNode('Index');
     indexTitle.appendChild(text);
     index.appendChild(indexTitle);
