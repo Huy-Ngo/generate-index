@@ -1,5 +1,9 @@
 # Page index generator
 
+NOTICE: This is deprecated in favor of a [master repo of scripts][utils]
+
+[utils]: https://git.sr.ht/~huyngo/utils
+
 Have you ever read an instruction page, or GitHub read me that's sooooo long,
 and there is no way to navigate between parts easily?
 
